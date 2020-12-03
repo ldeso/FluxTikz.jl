@@ -1,5 +1,11 @@
 module FluxTikz
 
-# Write your package code here.
+using Flux: Chain
+import TikzPictures: TikzPicture
+export TikzPicture
+
+include("layer.jl")
+include("network.jl")
+include("tikzpicture.jl")
 
 end
