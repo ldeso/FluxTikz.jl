@@ -188,9 +188,9 @@ version = "0.10.1"
 
 [[FiniteDifferences]]
 deps = ["ChainRulesCore", "LinearAlgebra", "Printf", "Random", "Richardson"]
-git-tree-sha1 = "df77f981a713a616884df390e0a8a8449ae4bfda"
+git-tree-sha1 = "9bc8327853f21c9c53eac6935e51b65bcc28c492"
 uuid = "26cc04aa-876d-5657-8c51-4c34ba976000"
-version = "0.11.4"
+version = "0.11.5"
 
 [[FixedPointNumbers]]
 deps = ["Statistics"]
