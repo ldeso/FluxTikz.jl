@@ -9,7 +9,7 @@ TikzPicture(
     outputs::Vector{String}=Vector{String}(),
     outputname="Output",
     kwargs...,
-) = TikzPicture(Network(chain, inputs, outputs, outputname), kwargs...)
+) = TikzPicture(Network(chain, inputs, outputs, outputname); kwargs...)
 
 function TikzPicture(network::Network; xscale=1.3, yscale=1, options="", kwargs...)
     inputs = network.inputs
