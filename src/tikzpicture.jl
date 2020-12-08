@@ -49,8 +49,6 @@ function TikzPicture(network::Network; xscale=1.3, yscale=1, options="", kwargs.
     connectlists = join(connectfmt.(enumerate(connectlist.(network.layers))), ',')
     annotlist = join(annotfmt.(zip(x.(0:length(network.layers) - 1), names)), ',')
 
-    @show annotlist
-
     data = """
         \\fill[white, use as bounding box] $xymin rectangle $xymax;
 
