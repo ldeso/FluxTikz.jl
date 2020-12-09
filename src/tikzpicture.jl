@@ -12,10 +12,10 @@ TikzPicture(
 ) = TikzPicture(Network(chain, inputs, outputs, outputname); kwargs...)
 
 function TikzPicture(network::Network; xscale=1.3, yscale=1, options="", kwargs...)
-    inputs = network.inputs
-    outputs = network.outputs
+    inputs = escapehash.(network.inputs)
+    outputs = escapehash.(network.outputs)
     widths = [layer.inputs for layer in network.layers]
-    names = [layer.name for layer in network.layers]
+    names = escapehash.([layer.name for layer in network.layers])
 
     nndepth = length(network.layers)
     nnwidth = maximum(widths)
@@ -79,3 +79,5 @@ function TikzPicture(network::Network; xscale=1.3, yscale=1, options="", kwargs.
     """
     TikzPicture(data; options=options, kwargs...)
 end
+
+escapehash(str) = replace(str, '#' => "\\#")
